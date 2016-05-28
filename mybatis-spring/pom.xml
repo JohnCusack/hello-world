@@ -12,6 +12,7 @@
     <artifactId>mybatis-spring</artifactId>
 
     <dependencies>
+        <!--Spring Context-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -35,7 +36,14 @@
             <artifactId>commons-dbcp</artifactId>
             <version>1.4</version>
         </dependency>
+        <!--Spring jdbc-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.2.6.RELEASE</version>
+        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>

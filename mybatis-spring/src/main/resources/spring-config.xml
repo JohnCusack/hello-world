@@ -11,7 +11,7 @@
         <property name="password" value="${jdbc.password}" />
     </bean>
 
-    <!--SqlSessionFactoryBean-->
+    <!--SqlSessionFactory-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--required-->
         <property name="dataSource" ref="dataSource" />
@@ -19,9 +19,14 @@
         <property name="mapperLocations" value="classpath*:mappers/**/*.xml" />
     </bean>
 
-    <!--Mapper Factory-->
-    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <!--MapperFactory-->
+<!--    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.hello.mapper.UserMapper" />
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>-->
+
+    <!--TransactionManager-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
     </bean>
 </beans>
