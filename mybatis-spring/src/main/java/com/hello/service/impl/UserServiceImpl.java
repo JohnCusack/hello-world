@@ -13,9 +13,9 @@ import javax.annotation.Resource;
  * Created by peker on 16/5/27.
  */
 @Service("userService")
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
-//    private UserMapper userMapper;
+    //    private UserMapper userMapper;
 //
 //    public void setUserMapper(UserMapper userMapper) {
 //        this.userMapper = userMapper;

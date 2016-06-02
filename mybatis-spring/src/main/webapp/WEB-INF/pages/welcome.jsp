@@ -12,6 +12,6 @@
     <title>Index Page</title>
   </head>
   <body>
-  ${msg}<h1>OK</h1>
+  <h1>OK ${msg}</h1>
   </body>
 </html>
