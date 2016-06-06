@@ -10,8 +10,5 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mybatis-spring</module>
-        <module>test</module>
     </modules>
-
-
 </project>
