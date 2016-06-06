@@ -3,13 +3,13 @@
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <classPathEntry location="WEB-INF/lib"/>
+    <classPathEntry location="/Users/peker/Temp/mysql-connector-java-5.1.38.jar"/>
 
     <context id="Tables" targetRuntime="MyBatis3" defaultModelType="conditional">
-        <jdbcConnection driverClass="${jdbc.driverClassName}"
-                        connectionURL="${jdbc.url}"
-                        userId="${jdbc.username}"
-                        password="${jdbc.password}">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/hello_world"
+                        userId="root"
+                        password="root">
         </jdbcConnection>
 
         <javaTypeResolver>
@@ -29,7 +29,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table schema="hello_world" tableName="*">
+        <table schema="hello_world" tableName="product">
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="ID" sqlStatement="JDBC" identity="true"/>
         </table>
