@@ -9,6 +9,9 @@
     <sql id="Base_Column">ID, USERNAME, PASSWORD</sql>
     <sql id="Where_Clause">WHERE 1=1 AND ID = #{id}</sql>
     <select id="selectById" resultMap="BaseMap" parameterType="java.lang.Integer">
-       SELECT <include refid="Base_Column"/> FROM user <include refid="Where_Clause"/>
+        SELECT
+        <include refid="Base_Column"/>
+        FROM user
+        <include refid="Where_Clause"/>
     </select>
 </mapper>

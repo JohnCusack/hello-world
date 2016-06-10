@@ -42,7 +42,7 @@
         <property name="typeAliasesPackage" value="com.hello.model"/>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.hello.dao"/>
+        <property name="basePackage" value="com.hello.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

@@ -3,36 +3,37 @@
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <classPathEntry location="/Users/peker/Temp/mysql-connector-java-5.1.38.jar"/>
+  <!--<properties resource="src/main/resources/jdbc.properties"/>-->
+  <classPathEntry location="/Users/peker/Temp/mysql-connector-java-5.1.38.jar"/>
+  <classPathEntry location="/Users/peker/IdeaProjects/hello-world/mybatis-spring"/>
 
-    <context id="Tables" targetRuntime="MyBatis3" defaultModelType="conditional">
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/hello_world"
-                        userId="root"
-                        password="root">
-        </jdbcConnection>
+  <context id="mysql" targetRuntime="MyBatis3" defaultModelType="conditional">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                    connectionURL="jdbc:mysql://localhost:3306/hello_world"
+                    userId="root"
+                    password="root">
+    </jdbcConnection>
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
 
-        <javaTypeResolver>
-            <property name="forceBigDecimals" value="false"/>
-        </javaTypeResolver>
+    <javaModelGenerator targetPackage="com.hello.model" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
+      <property name="trimStrings" value="true"/>
+    </javaModelGenerator>
 
-        <javaModelGenerator targetPackage="com.hello.model" targetProject="/Users/peker/IdeaProjects/hello-world/mybatis-spring/src/main/java">
-            <property name="enableSubPackages" value="true"/>
-            <property name="trimStrings" value="true"/>
-        </javaModelGenerator>
+    <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources">
+      <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
 
-        <sqlMapGenerator targetPackage="com.hello.mapper" targetProject="/Users/peker/IdeaProjects/hello-world/mybatis-spring/src/main/java">
-            <property name="enableSubPackages" value="true"/>
-        </sqlMapGenerator>
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.hello.mapper" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hello.dao" targetProject="/Users/peker/IdeaProjects/hello-world/mybatis-spring/src/main/java">
-            <property name="enableSubPackages" value="true"/>
-        </javaClientGenerator>
+    <table schema="hello_world" tableName="product">
+      <property name="useActualColumnNames" value="true"/>
+      <generatedKey column="ID" sqlStatement="JDBC" identity="true"/>
+    </table>
 
-        <table schema="hello_world" tableName="product">
-            <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="ID" sqlStatement="JDBC" identity="true"/>
-        </table>
-
-    </context>
+  </context>
 </generatorConfiguration>
