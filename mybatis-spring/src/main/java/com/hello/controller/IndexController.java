@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 
@@ -23,8 +24,7 @@ public class IndexController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
 
-        logger.info("User id = 1, name = {}", userService.getUser(1));
-        logger.debug("welcome() is executed, value {}", "mkyong");
+        logger.info("User id = 1, user = {}", userService.getUser(1).getUsername());
         logger.error("This is Error message", new Exception("Testing"));
         model.addAttribute("msg", "Hello Spring MVC + Logback");
         return "welcome";

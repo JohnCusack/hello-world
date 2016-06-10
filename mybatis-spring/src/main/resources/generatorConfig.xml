@@ -9,7 +9,7 @@
 
   <context id="mysql" targetRuntime="MyBatis3" defaultModelType="conditional">
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                    connectionURL="jdbc:mysql://localhost:3306/hello_world"
+                    connectionURL="jdbc:mysql://localhost:3306/hello_world?useSSL=false"
                     userId="root"
                     password="root">
     </jdbcConnection>
@@ -30,9 +30,9 @@
       <property name="enableSubPackages" value="true"/>
     </javaClientGenerator>
 
-    <table schema="hello_world" tableName="product">
-      <property name="useActualColumnNames" value="true"/>
-      <generatedKey column="ID" sqlStatement="JDBC" identity="true"/>
+    <table tableName="product" schema="hello_world"></table>
+    <table tableName="user">
+      <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
     </table>
 
   </context>
