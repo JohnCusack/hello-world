@@ -13,9 +13,11 @@
   <t:insertAttribute name="head" ignore="true"/>
 </head>
 <body>
-<a href="/base.html">Home</a>
-<a href="/base/aboutus.html">aboutus</a>
-<a href="/base/news.html">news</a>
+<ul>
+  <li><a href="/base.html">Home</a></li>
+  <li><a href="/base/aboutus.html">aboutus</a></li>
+  <li><a href="/base/news.html">news</a></li>
+</ul>
 <br>
 <t:insertAttribute name="content"/>
 <br>
