@@ -10,5 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mybatis-spring</module>
+        <module>my-comment-generator</module>
     </modules>
 </project>
